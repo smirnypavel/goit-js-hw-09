@@ -64,7 +64,7 @@ button:disabled {
   background: #acaaaa;
   justify-content: center;
 }
-
+/* 
 .field {
     color: #444;
   font-size: 30px;
@@ -77,7 +77,7 @@ button:disabled {
   display: flex;
   flex-direction: column-reverse;
   align-items: center;
-}
+} */
 
 .label {
   color: tomato;
