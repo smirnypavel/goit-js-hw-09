@@ -67,7 +67,7 @@ button:disabled {
   font-size: 30px;
   border-radius: 10%;
   border: 4px; /* Параметры границы */
-  background: rgb(19, 202, 50); /* Цвет фона */
+  background: rgb(172, 176, 172); /* Цвет фона */
   padding: 70px; /* Поля вокруг текста */
   margin: 10px;
   width: 100px;
