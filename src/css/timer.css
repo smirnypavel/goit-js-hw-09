@@ -2,8 +2,6 @@ body {
   text-align: center;
   background-color: #c4c3c3;
 }
-p {
-}
 
 input {
   color: #444;
@@ -64,12 +62,11 @@ button:disabled {
   background: #acaaaa;
   justify-content: center;
 }
-/* 
 .field {
-    color: #444;
+  color: #444;
   font-size: 30px;
   border-radius: 10%;
-  border: 4px /* Параметры границы */
+  border: 4px; /* Параметры границы */
   background: rgb(19, 202, 50); /* Цвет фона */
   padding: 70px; /* Поля вокруг текста */
   margin: 10px;
@@ -77,13 +74,13 @@ button:disabled {
   display: flex;
   flex-direction: column-reverse;
   align-items: center;
-} */
+}
 
 .label {
   color: tomato;
   font-weight: 800;
 }
 
-.value{
-    font-weight: 700;
+.value {
+  font-weight: 700;
 }
