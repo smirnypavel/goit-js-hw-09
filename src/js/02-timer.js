@@ -3,7 +3,6 @@ import 'flatpickr/dist/flatpickr.min.css';
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
 
 const startBtn = document.querySelector('[data-start]');
-// const stopBtn = document.querySelector('[data-stop]');
 const dataDays = document.querySelector('[data-days]');
 const dataHours = document.querySelector('[data-hours]');
 const dataMinutes = document.querySelector('[data-minutes]');
@@ -15,9 +14,6 @@ let intervalId = null;
 startBtn.disabled = true;
 
 startBtn.addEventListener('click', start);
-// stopBtn.addEventListener('click', stop);
-
-/* Вторым аргументом функции flatpickr(selector, options) передаем необязательный объект параметров. */
 
 const options = {
   enableTime: true,
@@ -25,8 +21,7 @@ const options = {
   defaultDate: new Date(),
   minuteIncrement: 1,
 
-  /* В методе onClose() обрабатываем дату выбранную пользователем: 
-  если пользователь не выбрал дату в будущем - failure, если верная дата - success*/
+
 
   onClose(selectedDates) {
     if (selectedDates[0].getTime() < Date.now()) {
@@ -42,8 +37,6 @@ const options = {
 };
 
 const calendar = flatpickr('#datetime-picker', options);
-
-/* Запускаем/останавливаем таймер */
 
 function start() {
   const startTime = selectedDate;
@@ -65,7 +58,6 @@ function start() {
   }, 1000);
 }
 
-/* Останавливаем/очищаем таймер */
 
 function stop() {
   startBtn.disabled = true;
@@ -79,7 +71,6 @@ function stop() {
 
 }
 
-/* Выбираем время */
 
 function updateTimer({ days, hours, minutes, seconds }) {
     dataDays.textContent = `${ days }`;
@@ -88,14 +79,9 @@ function updateTimer({ days, hours, minutes, seconds }) {
     dataSeconds.textContent = `${ seconds }`;
 }
 
-/* Перед отрисовкой интефрейса форматируем значение. */
-
 function addLeadingZero(value) {
   return String(value).padStart(2, '0');
 }
-
-/* Для подсчета значений используем функцию convertMs, где ms - разница между конечной и текущей датой в миллисекундах. */
-/* Функция convertMs() возвращает объект с рассчитанным оставшимся временем до конечной даты. */
 
 function convertMs(ms) {
   // Number of milliseconds per unit of time
